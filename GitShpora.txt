@@ -1,0 +1,12 @@
+git init 
+git remote add origin https://github.com/AirDesign/MailProject.git 
+git pull origin master
+git checkout <commit> or <Vetka>
+git checout -b <Name new branch>
+git add .
+git status 
+git commit -m "Comment"
+git log
+git push -u origin master
+
+
