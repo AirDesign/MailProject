@@ -8,5 +8,5 @@ git status
 git commit -m "Comment"
 git log
 git push -u origin master
-
+git push origin : Название_ветки
 
