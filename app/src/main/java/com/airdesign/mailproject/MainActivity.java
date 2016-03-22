@@ -1,14 +1,23 @@
 package com.airdesign.mailproject;
 
-import android.content.Intent;
+
+
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import org.jsoup.Jsoup;
+import org.jsoup.select.Elements;
+import org.w3c.dom.Document;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Parse objParse = new Parse();
+        objParse.execute();
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,10 +40,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        Intent intent = new Intent(this, Mail.class);
-        startActivity(intent);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -53,4 +64,44 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
+    public class Parse extends AsyncTask<TextView, Void, Void> {
+
+        Elements metaElements;
+        String title;
+
+        @Override
+        protected Void doInBackground(TextView... params) {
+
+            org.jsoup.nodes.Document doc = null;
+
+            try {
+                doc = Jsoup.connect("http://harrix.org").get();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if(doc != null){
+                title = doc.title();
+            }
+            else title = "Error";
+
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result){
+            super.onPostExecute(result);
+
+            TextView Tv1 = (TextView) findViewById(R.id.TextView1);
+            Tv1.setText(title);
+        }
+    }
 }
+
+
