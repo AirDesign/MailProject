@@ -9,4 +9,5 @@ git commit -m "Comment"
 git log
 git push -u origin master
 git push origin : Название_ветки
-
+git config --global core.autocrlf false -  отключить проверку формата
+git config --global core.safecrlf false -  отключить проверку формата
