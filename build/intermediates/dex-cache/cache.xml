@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Android Studio\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="D:\Android Studio\MyApplication\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.1.0_a3a64b341f8eb4d1d6cd3f9856cfc0498c9e137c.jar" />
+    </item>
+    <item
+        jar="D:\Android Studio\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="D:\Android Studio\MyApplication\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.1.0_8f77cb4719efa0f1d1049952919ea97dbb67e868.jar" />
+    </item>
+
+</items>
